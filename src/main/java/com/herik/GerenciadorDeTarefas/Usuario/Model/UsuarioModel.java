@@ -1,9 +1,12 @@
 package com.herik.GerenciadorDeTarefas.Usuario.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.herik.GerenciadorDeTarefas.Tarefa.Model.TarefaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_usuarios")
@@ -25,6 +28,7 @@ public class UsuarioModel {
 
     @Column(name = "tarefas")
     @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
     private List<TarefaModel> tarefas;
 
 }

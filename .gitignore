@@ -19,6 +19,10 @@ target/
 *.iml
 *.ipr
 
+### Dados Banco de dados ###
+/data
+.env
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
