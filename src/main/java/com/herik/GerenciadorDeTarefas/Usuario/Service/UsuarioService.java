@@ -77,6 +77,13 @@ public class UsuarioService {
     }
 
     public void deletarUsuario(Long id){
+        UsuarioModel usuarioModel = usuarioRepository.findById(id)
+                .orElseThrow(() -> new UsuarioNotFoundException(id));
+
+        for (TarefaModel tarefa : usuarioModel.getTarefas()) {
+            tarefaRepository.deleteById(tarefa.getId());
+        }
+
         usuarioRepository.deleteById(id);
     }
 

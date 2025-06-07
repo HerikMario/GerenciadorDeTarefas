@@ -1,8 +1,7 @@
 package com.herik.GerenciadorDeTarefas.Tarefa.Enums;
 
 public enum Status {
-    CONCLUIDA,
+    PENDENTE,
     EM_ANDAMENTO,
-    PAUSADA,
-    NAO_INICIADA
+    CONCLUIDA
 }
